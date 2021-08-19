@@ -87,7 +87,7 @@
                     </svg></i>
             </div>
                     <!-- product slide -->
-            <section class="slider">
+            <section class="slider reveals">
                         <div class="slider__product">
                             <h2>Sản phẩm mua 1 tặng 1</h2>
                         </div>
@@ -310,7 +310,7 @@
                     <h2>Sản phẩm nổi bật</h2>
                 </div>
                 <div class="grid wide">
-                    <div class="row row__top">
+                    <div class="row row__top reveals">
                         <div class="col l-3 m-6 c-6">
                             <div class="highlight__product">
                                 <div class="highlight__product--img" style="background-image: url(./asset/img/nike15.jpg);">
@@ -400,7 +400,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row row__top">
+                    <div class="row row__top reveals">
                         <div class="col l-3 m-6 c-6">
                             <div class="highlight__product">
                                 <div class="highlight__product--img" style="background-image: url(./asset/img/highlight4.jpg);">
@@ -490,7 +490,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row row__top">
+                    <div class="row row__top reveals">
                         <div class="col l-3 m-6 c-6">
                             <div class="highlight__product">
                                 <div class="highlight__product--img" style="background-image: url(./asset/img/highlight8.jpg);">
@@ -584,7 +584,7 @@
             </div>
             <!--end highlight -->
             <!-- New -->
-            <div class="content__new">
+            <div class="content__new reveals">
                 <div class="slider__product new ">
                     <h2>Tin tức nổi bật</h2>
                 </div>
@@ -663,5 +663,21 @@
         </footer>
     </div>
    <script src="./asset/js/main.js"></script>
+    <script>
+       window.addEventListener("scroll", reveal);
+       function reveal(){
+           var reveals = document.querySelectorAll(".reveals");
+           for(var i=0; i<reveals.length;i++){
+               var windowHeight = window.innerHeight;
+               var revealTop = reveals[i].getBoundingClientRect().top;
+               var revealPoint = 150;
+               if(revealTop < windowHeight - revealPoint){
+                   reveals[i].classList.add("active");
+               }else{
+                    reveals[i].classList.remove("active");
+               }
+           }
+       }
+   </script>
 </body>
 </html>
